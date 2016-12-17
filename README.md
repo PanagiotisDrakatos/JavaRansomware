@@ -28,18 +28,18 @@ The server is responsible for store the Id and the respective encryption key and
 The malware encrypt with your RSA-4096 public key any payload before send then to the server. This approach with the https transport together make the security and authentication almost unbreakable (in theory)
 
 #Usage and How it Works
-<p>The easiest way to run this Project is to use the the .jar open a cmd terminal and simply run the below commands <p>
+<p>The easiest way to run this Project is to use the the <a href="https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomware-2.1-jar-with-dependencies.jar">.jar</a> open a cmd terminal and simply run the below commands </p>
 
  ```
  $ cd JarPath
 ```
 
-<p>Encrypt All Files in the Current Path <p>
+<p>Encrypt All Files in the Current Path </p>
  ```
  $ java -jar JavaRansomware.jar C:\Users Encrypt
 ```
 
-<p>Decrypt All Files in the Current Path <p>
+<p>Decrypt All Files in the Current Path </p>
  ```
  $ java -jar JavaRansomware.jar C:\Users Decrypt
 ```
@@ -76,7 +76,9 @@ public class App {
 ```
 ---
 
-> DON'T RUN ransomware.exe IN YOUR PERSONAL MACHINE, EXECUTE ONLY IN A TEST ENVIRONMENT!
+![alt tag](https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/ComandLineArgument.PNG)
+
+> DON'T RUN ransomware.exe IN YOUR PERSONAL MACHINE, EXECUTE ONLY IN A TEST ENVIRONMENT(VMWARE)!
 
 #Legal Warning
 <p>While this may be helpful for some, there are significant risks. JavaRansomware may be used only for Educational Purposes. Do not use it as a ransomware! You could go to jail if if you will use it for malicious purposes.</p>
