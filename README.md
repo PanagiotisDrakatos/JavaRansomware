@@ -34,12 +34,12 @@ For Education Purposes I will not Provide the Full Server  source code.,as i dec
  $ cd JarPath
 ```
 
-<p>Encrypt All Files in the Current Path </p>
+<p>Encrypt All Files in the Current Path wait until the execution will be finished</p>
  ```
  $ java -jar JavaRansomware.jar C:\Users Encrypt
 ```
 
-<p>Decrypt All Files in the Current Path </p>
+<p>Decrypt All Files in the Current Path wait until the execution will be finished</p>
  ```
  $ java -jar JavaRansomware.jar C:\Users Decrypt
 ```
