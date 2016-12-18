@@ -19,13 +19,13 @@ Ransomware can:</p>
 There is no guarantee that paying the fine or doing what the ransomware tells you will give access to your PC or files again.</p>
 
 # Project Summary
-This project aims to build an almost functional crypto-ransomware for educational purposes, written in in pure java. Basically, it will encrypt your files in background using AES-256, a strong encryption algorithm, using RSA-4096 to secure the key exchange with server. Yeah, a Cryptolocker like malware.
+This project aims to build an almost functional crypto-ransomware for educational purposes, written in in pure java. Basically, it will encrypt your files in background using AES-256, a strong encryption algorithm, using RSA-4096 Public Key to secure the AES Symetric key and store it in an embeeded database.
 
-It is composed of two main parts, the server and the malware itself.
+Assume that there is a C&C Server who  for store the Id and the respective encryption key and possibly act as a Command and Control server in the near future.
 
-The server is responsible for store the Id and the respective encryption key and possibly act as a Command and Control server in the near future.
+The malware encrypt with your RSA-4096 public key any payload before send then to the server. This approach with the https transport together make the security and authentication almost unbreakable (in theory).
 
-The malware encrypt with your RSA-4096 public key any payload before send then to the server. This approach with the https transport together make the security and authentication almost unbreakable (in theory)
+For Education Purposes I will not Provide the Full Server  source code.,as i decribed in the previous paragraph.  Let's imagine a simple testing example which client by deafult has the Asymmetrtic encryption keys.
 
 #Usage and How it Works
 <p>The easiest way to run this Project is to use the the <a href="https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomware-2.1-jar-with-dependencies.jar">.jar</a> open a cmd terminal and simply run the below commands </p>
@@ -43,6 +43,9 @@ The malware encrypt with your RSA-4096 public key any payload before send then t
  ```
  $ java -jar JavaRansomware.jar C:\Users Decrypt
 ```
+
+> DON'T RUN JavaRansomware.jar IN YOUR PERSONAL MACHINE, EXECUTE ONLY IN A TEST ENVIRONMENT(VMWARE)!
+
 <p>if you want to use the project programmatically just put the below code in your project and simply run it. Don't forget to give Input arguments from the Command-Line Arguments. i've put  a printscreen to see how to give Paramaters</p>
 
 <h2>Java Manual</h2>
@@ -76,9 +79,8 @@ public class App {
 ```
 ---
 
-![alt tag](https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/ComandLineArgument.PNG)
+![alt tag](https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomWare.PNG)
 
-> DON'T RUN ransomware.exe IN YOUR PERSONAL MACHINE, EXECUTE ONLY IN A TEST ENVIRONMENT(VMWARE)!
 
 #Legal Warning
 <p>While this may be helpful for some, there are significant risks. JavaRansomware may be used only for Educational Purposes. Do not use it as a ransomware! You could go to jail if if you will use it for malicious purposes.</p>
