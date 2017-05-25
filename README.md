@@ -34,12 +34,14 @@ There is no guarantee that paying the fine or doing what the ransomware tells yo
  $ cd JarPath
 ```
 
-<p>Encrypt All Files in the Current Path wait until the execution will be finished</p>
+<p> Encrypt All Files in the Current Path wait until the execution will be finished </p>
+
  ```
  $ java -jar JavaRansomware.jar C:\Users Encrypt
 ```
 
-<p>Decrypt All Files in the Current Path wait until the execution will be finished</p>
+<p> Decrypt All Files in the Current Path wait until the execution will be finished </p>
+
  ```
  $ java -jar JavaRansomware.jar C:\Users Decrypt
 ```
