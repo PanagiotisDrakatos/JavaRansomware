@@ -57,17 +57,19 @@ The code uses standard Java libraries and a custom encryption routine to execute
     - [Decryption Process](#decryption-process)
     - [Keys and Security](#keys-and-security)
 5. [Project Structure](#project-structure)
-6. [Usage](#usage)
-7. [Important Disclaimers](#important-disclaimers)
-8. [License](#license)
+6 .[Legal Warning](#legal-warning)
+6. [Support](#support)
+7. [Note](#note)
+8. [Contribute](#contribute)
+9. [Authors](#authors)
+10. [License](#license)
 
 ## Project Overview
 
 **JavaRansomware** is a proof-of-concept cryptographic ransomware application written in **pure Java**.
 It demonstrates how a malicious actor might encrypt files on a target machine, hold them for
 ransom, and only decrypt them upon certain conditions. Ransomware is malware for data kidnapping, an exploit in which
-the attacker encrypts the victim's
-files and stops them from access them.
+the attacker encrypts the victim's  files and stops them from access them.
 
 As a teaching tool, this repository illustrates common ransomware tactics:
 
@@ -171,17 +173,6 @@ The easiest way to run this Project is to use the
 <a href="https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomware-2.1-jar-with-dependencies.jar">
 .jar</a> open a cmd terminal and simply run the below commands
 =======
-# Project Summary
-<p>This project aims to build an almost functional crypto-ransomware for educational purposes, written in in pure java. Basically, it will encrypt your files in background using AES-256, a strong encryption algorithm, using RSA-4096 Public Key to secure the AES Symetric key and store it in an embeeded database.</p>
-
-<p>Assume that there is a C &amp C Server who  for store the Id and the respective encryption key and possibly act as a Command and Control server in the near future.</p>
-
-<p>The malware encrypt with your RSA-4096 public key any payload before send then to the server. This approach with the https transport together make the security and authentication almost unbreakable (in theory).</p>
-
-<p>For Education Purposes I will not Provide the Full Server  source code.,as i decribed in the previous paragraph.  Let's imagine a simple testing example which client by deafult has the Asymmetrtic encryption keys.</p>
-
-# Usage and How it Works
-<p>The easiest way to run this Project is to use the the <a href="https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomware-2.1-jar-with-dependencies.jar">.jar</a> open a cmd terminal and simply run the below commands </p>
 
  ```
  $ mvn clean install
@@ -261,17 +252,13 @@ public class Example {
 
 ![alt tag](./JavaRansomWare.PNG)
 
-# Legal Warning
-
-While this may be helpful for some, there are significant risks. JavaRansomware may be used only
-for Educational Purposes. Do not use it as a ransomware! You could go to jail if if you will use
-it for malicious purposes.
-=======
-# Legal Warning
-<p>While this may be helpful for some, there are significant risks. JavaRansomware may be used only for Educational Purposes. Do not use it as a ransomware! You could go to jail if if you will use it for malicious purposes.</p>
+## Legal Warning
+While this may be helpful for some, there are significant risks. JavaRansomware may be used only for 
+Educational Purposes. Do not use it as a ransomware! You could go to jail if if you will use it for 
+malicious purposes.<
 
 
-# Support
+## Support
 
 For support, email panagiotisdrakatos@gmail.com or join me Discord:panos5427.
 Meaning, if you liked using this app or it has helped you in any way,
@@ -285,7 +272,7 @@ I'd really appreciate it!
 - I would not recommend using JavaRansomware + obfuscatebecause many times av trigger obfuscated codes as false positive
   even if legitimate.
 
-# Contribute
+## Contribute
 
 1. Fork it: git clone https://github.com/PanagiotisDrakatos/JavaRansomware.git
 2. Create your feature branch: git checkout -b my-new-feature
@@ -293,11 +280,11 @@ I'd really appreciate it!
 4. Push to the branch: git push origin my-new-feature
 5. Submit a pull request :D
 
-# Authors
+## Authors
 
 - [@panagiotisdrakatos](https://github.com/PanagiotisDrakatos)
 
-# License
+## License
 
 This project is distributed under the MIT license version 2.0 (see the LICENSE file in the project root).
 
