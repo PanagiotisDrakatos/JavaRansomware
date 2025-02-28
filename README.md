@@ -18,6 +18,7 @@ The code uses standard Java libraries and a custom encryption routine to execute
 
 # JavaRansomware
 
+<a href="">![build-status](https://ci.appveyor.com/api/projects/status/github/PanagiotisDrakatos/javaransomware?branch=master&svg=true)</a>
 <a href="">[![Scc Count Badge](https://sloc.xyz/github/PanagiotisDrakatos/JavaRansomware/?category=lines)](https://github.com/PanagiotisDrakatos/JavaRansomware/)</a>
 <a href="">![GitHub Repo stars](https://img.shields.io/github/stars/PanagiotisDrakatos/JavaRansomware?style=flat&logoColor=green)</a>
 <a href="">![GitHub followers](https://img.shields.io/github/followers/PanagiotisDrakatos?style=flat&logo=green)</a>
@@ -37,10 +38,7 @@ The code uses standard Java libraries and a custom encryption routine to execute
 <a href="">[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/LICENSE)</a>
 
 </div>
-# What does ransomware do?
-<p>There are different types of ransomware. However, all of them will prevent you from using your PC normally, and they will all ask you to do something before you can use your PC.
 
-# JavaRansomware – Educational Ransomware Project in Pure Java
 
 > **Warning**  
 > This project is intended **solely for educational and research purposes**.  
