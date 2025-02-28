@@ -1,0 +1,63 @@
+environment:
+  MAVEN_OPTS: "-Xmx8g -XX:MaxMetaspaceSize=12g"
+  MAVEN_VERSION: 3.9.9
+  APPVEYOR_BUILD_ID: 1
+  APPVEYOR_BUILD_NUMBER: 1.0.2
+init:
+  - set APPVEYOR_BUILD_ID
+  - set APPVEYOR_BUILD_NUMBER
+
+image: ubuntu
+branches:
+  only:
+    - master
+configuration: Release
+install:
+  - sh: |
+      echo "APPVEYOR_BUILD_ID: $APPVEYOR_BUILD_ID"
+      echo "APPVEYOR_BUILD_NUMBER: $APPVEYOR_BUILD_NUMBER"
+  - export MAVEN_OPTS="-Xmx8g -XX:MaxMetaspaceSize=12g"
+  - ls -ahl;
+  - sh: |
+      sudo apt -y update > /dev/null;
+      sudo DEBIAN_FRONTEND=noninteractive apt -qq -y install aria2 gnupg2 graphviz openssl rsync sshpass whois --no-install-suggests --no-install-recommends;
+  #- whois $(curl ipinfo.io/ip);
+  # Settings -> Environment -> Environment variables -> Add variable
+  # CI_OPT_ORIGIN_REPO_SLUG
+  - sh: |
+      # make AppVeyor's JDK path (/usr/lib/jvm/java-21-openjdk-amd64) compatible with travis-ci's style (/usr/lib/jvm/java-21-openjdk) to make toolchains.xml valid
+      if [[ -d /usr/lib/jvm/java-8-openjdk-amd64 ]]; then sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /usr/lib/jvm/java-8-openjdk; fi;
+      if [[ -d /usr/lib/jvm/java-11-openjdk-amd64 ]]; then sudo ln -s /usr/lib/jvm/java-11-openjdk-amd64 /usr/lib/jvm/java-11-openjdk; fi;
+      if [[ -d /usr/lib/jvm/java-21-openjdk-amd64 ]]; then sudo ln -s /usr/lib/jvm/java-21-openjdk-amd64 /usr/lib/jvm/java-21-openjdk; fi;
+      export JAVA_HOME="/usr/lib/jvm/java-21-openjdk";
+      export PATH="$JAVA_HOME:$PATH";
+  - sh: |
+      export CI_OPT_MVN_MULTI_STAGE_BUILD="false";
+
+  - sh: |
+      mvn -v
+      wget https://downloads.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+      tar -xzf apache-maven-3.9.9-bin.tar.gz
+      sudo mv apache-maven-3.9.9 /opt/maven
+      export PATH=/opt/maven/bin:$PATH
+      mvn -v
+      java -version
+
+services:
+  - docker
+
+stack: jdk 21
+build_script:
+  - mvn clean install -U
+test_script:
+  - mvn clean install -U
+after_test:
+  - ps: |
+      curl -s https://codecov.io/bash | bash -s - -t 1d910d2b-5749-4c90-bc7d-e8e4b3185606
+build: off
+cache:
+  - "$HOME/.cache"
+  - "$HOME/.gradle"
+  - "$HOME/.m2/repository"
+  - "$HOME/.m2/wrapper"
+  - "$HOME/.sonar/cache"
