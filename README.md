@@ -13,7 +13,6 @@ The code uses standard Java libraries and a custom encryption routine to execute
 <sup>Visit <u>warp.dev</u> to learn more.</sup>
 </div>
 
-</div>
 
 <hr />
 
@@ -36,7 +35,8 @@ The code uses standard Java libraries and a custom encryption routine to execute
 <a href="">[![GitHub code-size](https://img.shields.io/github/languages/code-size/PanagiotisDrakato/JavaRansomware.svg)]()</a>
 <a href="">![GitHub repo size](https://img.shields.io/github/repo-size/PanagiotisDrakatos/JavaRansomware?style=flat&logo=green)</a>
 <a href="">[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/LICENSE)</a>
-=======
+
+</div>
 # What does ransomware do?
 <p>There are different types of ransomware. However, all of them will prevent you from using your PC normally, and they will all ask you to do something before you can use your PC.
 
@@ -56,8 +56,7 @@ The code uses standard Java libraries and a custom encryption routine to execute
     - [Encryption Process](#encryption-process)
     - [Decryption Process](#decryption-process)
     - [Keys and Security](#keys-and-security)
-5. [Project Structure](#project-structure)
-6 .[Legal Warning](#legal-warning)
+5. .[Legal Warning](#legal-warning)
 6. [Support](#support)
 7. [Note](#note)
 8. [Contribute](#contribute)
