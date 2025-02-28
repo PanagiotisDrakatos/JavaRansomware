@@ -8,10 +8,11 @@
 <b>
 JavaRansomware encrypts a victim’s files through Java, preventing access without a decryption key
 The code uses standard Java libraries and a custom encryption routine to execute its malicious payload
-
 </b>
 <div>
 <sup>Visit <u>warp.dev</u> to learn more.</sup>
+</div>
+
 </div>
 
 <hr />
