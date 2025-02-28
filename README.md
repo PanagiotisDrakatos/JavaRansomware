@@ -35,6 +35,9 @@ The code uses standard Java libraries and a custom encryption routine to execute
 <a href="">[![GitHub code-size](https://img.shields.io/github/languages/code-size/PanagiotisDrakato/JavaRansomware.svg)]()</a>
 <a href="">![GitHub repo size](https://img.shields.io/github/repo-size/PanagiotisDrakatos/JavaRansomware?style=flat&logo=green)</a>
 <a href="">[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/LICENSE)</a>
+=======
+# What does ransomware do?
+<p>There are different types of ransomware. However, all of them will prevent you from using your PC normally, and they will all ask you to do something before you can use your PC.
 
 # JavaRansomware – Educational Ransomware Project in Pure Java
 
@@ -166,12 +169,33 @@ imagine a simple testing example which client by deafult has the Asymmetrtic enc
 The easiest way to run this Project is to use the
 <a href="https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomware-2.1-jar-with-dependencies.jar">
 .jar</a> open a cmd terminal and simply run the below commands
+=======
+# Project Summary
+<p>This project aims to build an almost functional crypto-ransomware for educational purposes, written in in pure java. Basically, it will encrypt your files in background using AES-256, a strong encryption algorithm, using RSA-4096 Public Key to secure the AES Symetric key and store it in an embeeded database.</p>
+
+<p>Assume that there is a C &amp C Server who  for store the Id and the respective encryption key and possibly act as a Command and Control server in the near future.</p>
+
+<p>The malware encrypt with your RSA-4096 public key any payload before send then to the server. This approach with the https transport together make the security and authentication almost unbreakable (in theory).</p>
+
+<p>For Education Purposes I will not Provide the Full Server  source code.,as i decribed in the previous paragraph.  Let's imagine a simple testing example which client by deafult has the Asymmetrtic encryption keys.</p>
+
+# Usage and How it Works
+<p>The easiest way to run this Project is to use the the <a href="https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomware-2.1-jar-with-dependencies.jar">.jar</a> open a cmd terminal and simply run the below commands </p>
 
  ```
  $ mvn clean install
 ```
 
 Encrypt all files in the current Path wait until the execution will be finished
+
+=======
+<p> Encrypt All Files in the Current Path wait until the execution will be finished </p>
+
+ ```
+ $ java -jar JavaRansomware.jar C:\Users Encrypt
+```
+
+<p> Decrypt All Files in the Current Path wait until the execution will be finished </p>
 
  ```
  $ java -jar ...JavaRansomware\targetJavaRansomware.jar
@@ -241,6 +265,10 @@ public class Example {
 While this may be helpful for some, there are significant risks. JavaRansomware may be used only
 for Educational Purposes. Do not use it as a ransomware! You could go to jail if if you will use
 it for malicious purposes.
+=======
+# Legal Warning
+<p>While this may be helpful for some, there are significant risks. JavaRansomware may be used only for Educational Purposes. Do not use it as a ransomware! You could go to jail if if you will use it for malicious purposes.</p>
+
 
 # Support
 
@@ -270,6 +298,21 @@ I'd really appreciate it!
 
 # License
 
+This project is distributed under the MIT license version 2.0 (see the LICENSE file in the project root).
+
+By submitting a pull request to this project, you agree to license your contribution under the MIT license version 2.0
+to this project.
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+=======
+# Contribute
+ 1. Fork it: git clone https://github.com/PanagiotisDrakatos/JavaRansomware.git
+ 2. Create your feature branch: git checkout -b my-new-feature
+ 3. Commit your changes: git commit -am 'Add some feature'
+ 4. Push to the branch: git push origin my-new-feature
+ 5. Submit a pull request :D
+ 
+# License
 This project is distributed under the MIT license version 2.0 (see the LICENSE file in the project root).
 
 By submitting a pull request to this project, you agree to license your contribution under the MIT license version 2.0
