@@ -166,37 +166,29 @@ and Control server in the near future.
 For Education Purposes I will not Provide the Full Server source code.,as i decribed in the previous paragraph. Let's
 imagine a simple testing example which client by deafult has the Asymmetrtic encryption keys.
 
-The easiest way to run this Project is to use the
-<a href="https://github.com/PanagiotisDrakatos/JavaRansomware/blob/master/JavaRansomware-2.1-jar-with-dependencies.jar">
-.jar</a> open a cmd terminal and simply run the below commands
-=======
+The easiest way to run this Project is to simply run the below commands
 
  ```
  $ mvn clean install
 ```
 
-Encrypt all files in the current Path wait until the execution will be finished
+Run the following test and encrypt all files in the current given path of the Examples test file
+and wait until the execution will be finished.
 
-=======
-<p> Encrypt All Files in the Current Path wait until the execution will be finished </p>
+ ```bash
+    mvn -Dtest=MyTest ExampleTest test
+  ```
 
- ```
- $ java -jar JavaRansomware.jar C:\Users Encrypt
-```
-
-<p> Decrypt All Files in the Current Path wait until the execution will be finished </p>
-
- ```
- $ java -jar ...JavaRansomware\targetJavaRansomware.jar
-```
 
 > DON'T RUN JavaRansomware.jar IN YOUR PERSONAL MACHINE, EXECUTE ONLY IN A TEST ENVIRONMENT(VMWARE)!
 
 if you want to use the project programmatically just put the below code in your project and simply run it. Don't forget
-to give Input arguments from the Command-Line Arguments. i've put a printscreen to see how to give Paramaters
+to give input arguments path before executing it.
 
 <h2>Java Manual</h2>
 
+JDK [21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) is required to build and run this
+project.
 ```java
 package com.security;
 
@@ -245,7 +237,6 @@ public class Example {
 
 ```
 
----
 
 ![alt tag](./JavaRansomWare.PNG)
 
@@ -272,32 +263,17 @@ I'd really appreciate it!
 ## Contribute
 
 1. Fork it: git clone https://github.com/PanagiotisDrakatos/JavaRansomware.git
-2. Create your feature branch: git checkout -b my-new-feature
-3. Commit your changes: git commit -am 'Add some feature'
-4. Push to the branch: git push origin my-new-feature
-5. Submit a pull request :D
+2. Create your feature branch: ```git checkout -b my-new-feature```
+3. Commit your changes: ```git commit -am 'Add some feature```
+4. Push to the branch: ```git push origin my-new-feature```
+5. Submit a pull request
 
 ## Authors
 
 - [@panagiotisdrakatos](https://github.com/PanagiotisDrakatos)
 
-## License
-
-This project is distributed under the MIT license version 2.0 (see the LICENSE file in the project root).
-
-By submitting a pull request to this project, you agree to license your contribution under the MIT license version 2.0
-to this project.
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-=======
-# Contribute
- 1. Fork it: git clone https://github.com/PanagiotisDrakatos/JavaRansomware.git
- 2. Create your feature branch: git checkout -b my-new-feature
- 3. Commit your changes: git commit -am 'Add some feature'
- 4. Push to the branch: git push origin my-new-feature
- 5. Submit a pull request :D
  
-# License
+## License
 This project is distributed under the MIT license version 2.0 (see the LICENSE file in the project root).
 
 By submitting a pull request to this project, you agree to license your contribution under the MIT license version 2.0
