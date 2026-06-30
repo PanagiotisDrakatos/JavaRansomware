@@ -16,7 +16,7 @@
         <commons-io.version>2.18.0</commons-io.version>
         <commons-codec.version>1.18.0</commons-codec.version>
         <bcprov-jdk18on.version>1.80</bcprov-jdk18on.version>
-        <jackson-databind.version>2.18.2</jackson-databind.version>
+        <jackson-databind.version>2.22.0</jackson-databind.version>
         <derby.version>10.17.1.0</derby.version>
         <junit-jupiter-api.version>5.12.0</junit-jupiter-api.version>
         <fury-core.version>0.10.0</fury-core.version>
